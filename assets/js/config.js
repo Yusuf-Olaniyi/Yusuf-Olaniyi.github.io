@@ -207,7 +207,7 @@ export const site = {
     {
       kind: "news",
       date: "2026-02",
-      title: "Started as a research intern at NTU Singapore",
+      title: "Started a research internship at NTU Singapore",
       text: "Working on corrosion detection and severity estimation with computer vision, supported by the Global Connect Fellowship.",
     },
     {
