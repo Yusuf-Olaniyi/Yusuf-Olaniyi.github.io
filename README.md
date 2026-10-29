@@ -13,26 +13,6 @@ ES modules do not load from `file://`, so use any static server:
     # or
     python3 -m http.server 8000
 
-## First things to fill in
-
-1. **CV:** put your PDF at `assets/cv/Yusuf_Olaniyi_CV.pdf` (the header, hero, About and Contact buttons point there).
-2. **Portrait:** replace `assets/img/placeholder-portrait.svg` (3:4 works best) and update `about.portrait.src` in `config.js`. Set `portrait: null` to hide the card.
-3. **Links:** in `assets/js/config.js`, fill the empty `href: ""` values (preprint, posters, repos, LinkedIn, GitHub). An empty href is hidden, so the site never shows a dead link.
-4. **Figures:** each research entry has a placeholder in `assets/img/`. Replace the file or change that entry's `figure.src`, `alt` and `caption`. Set `figure: null` to hide it. The first featured entry is the tall card on Home, and only it shows its figure there.
-5. **Affiliation logos:** the strip shows institution names. Add `logo: "assets/img/name.svg"` to an entry to show a logo (check you have permission to use it).
-6. **Updates and notes:** add an object to `updates` (`kind: "news"` or `"note"`).
-
-## Where to edit what
-
-| To change…                                   | Edit                                   |
-| -------------------------------------------- | -------------------------------------- |
-| Any text, entry, link, date                  | `assets/js/config.js`                  |
-| Colours, fonts, spacing, light/dark themes   | `assets/css/tokens.css`                |
-| Look of a section                            | `assets/css/components.css`            |
-| Markup of a section                          | `assets/js/components/<name>.js`       |
-| Which sections a page has, and their order   | the page's `.html` file                |
-
-Text markup in content strings: `**bold**` and `{italic accent word}`.
 
 ## How the modules fit together
 
