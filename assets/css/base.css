@@ -1,0 +1,67 @@
+/* ==========================================================
+   BASE — reset, typography, layout primitives
+   ========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: var(--step-0) / 1.65 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, canvas { display: block; max-width: 100%; }
+
+/* Headlines are sans; the serif appears only in italic accent words ({like this} in config). */
+h1, h2, h3 { margin: 0; font-family: var(--font-ui); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em; }
+
+.accent {
+  font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: -0.01em; font-size: 1.08em;
+  color: var(--accent);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .accent {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+}
+
+p { margin: 0 0 1em; max-width: var(--measure); }
+
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--accent); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--accent); color: var(--on-accent);
+}
+.skip-link:focus { left: var(--space-3); top: var(--space-3); }
+
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+
+.section { padding-block: var(--space-6); }
+.section__title { font-size: var(--step-3); margin-bottom: var(--space-4); }
+.section__lead { font-size: var(--step-1); color: var(--muted); max-width: 46ch; margin-bottom: var(--space-5); }
+.section__more { margin-top: var(--space-5); }
+
+/* mono label with a leading rule: "02 · Research" */
+.eyebrow {
+  display: flex; align-items: center; gap: 0.75rem; margin: 0 0 var(--space-3);
+  font: 500 0.75rem / 1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+}
+.eyebrow::before { content: ""; width: 2rem; height: 1px; background: currentColor; }
+.eyebrow--center { justify-content: center; }
+
+.muted { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -1,0 +1,70 @@
+/* ==========================================================
+   TOKENS — the only file you need to touch to re-skin the site
+   ========================================================== */
+:root {
+  /* Type */
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1rem, 1rem + 0.3vw, 1.25rem);
+  --step-2: clamp(1.45rem, 1.25rem + 1vw, 1.9rem);
+  --step-3: clamp(1.3rem, 1.5rem + 2vw, 2.5rem);
+  --step-4: clamp(2.3rem, 1.6rem + 3.4vw, 4rem);
+
+  /* Space & layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1.25rem;
+  --space-5: 2rem;
+  --space-6: clamp(3.5rem, 8vw, 6rem);
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --container: 1080px;
+  --measure: 62ch;
+  --radius: 10px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Dark is the default */
+:root {
+  color-scheme: dark;
+  --bg: #101319;
+  --surface: #161b24;
+  --text: #e9edf3;
+  --muted: #93a0b2;
+  --border: #252d3a;
+  --accent: #8ab4ff;
+  --accent-2: #5fd3c4;
+  --on-accent: #0b1020;
+}
+
+/* Light — follows the system unless the visitor picked dark */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #11151c;
+    --muted: #556075;
+    --border: #dfe3ec;
+    --accent: #3556d6;
+    --accent-2: #0f8f87;
+    --on-accent: #ffffff;
+  }
+}
+
+/* Light — chosen with the header toggle */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #11151c;
+  --muted: #556075;
+  --border: #dfe3ec;
+  --accent: #3556d6;
+  --accent-2: #0f8f87;
+  --on-accent: #ffffff;
+}
